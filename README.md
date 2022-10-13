@@ -2,6 +2,11 @@
 
 Modify this `README.md` file, to explain what your software does.
 
+# Additional resources
+
+In addition to this template, here is a list of useful resources you could start from:
+- https://github.com/NINAnor/NinaR
+
 # Good practices
 
 ## .gitignore
