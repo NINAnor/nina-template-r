@@ -1,0 +1,52 @@
+_templates_suffix: .jinja
+_keep_on_update:
+  - .pixi/
+  - pixi.lock
+  - .git/
+  - .pre-commit-config.yml
+_exclude:
+  - .pixi/
+  - .git
+  - template_scripts
+  - .changelog.tpl
+  - .gitchangelog.rc
+  - .pinact.yml
+  - uv.lock
+  - pyproject.toml
+  - ctt.toml
+
+project_name:
+  type: str
+  default: NINA R project
+  help: "Name of the project for the humans"
+
+project_slug:
+  type: str
+  default: |-
+    {{ project_name.lower().replace(' ', '_')}}
+  help: "Name of the project for the machines, underscores instead of spaces"
+  validator: >-
+    {% if not project_slug | regex_search('^[a-zA-Z0-9]([a-zA-Z0-9._-]*[a-zA-Z0-9])?$') %}
+    Invalid package name. Must start/end with letter or digit, contain only letters, numbers, dots, hyphens, underscores.
+    {% endif %}
+
+author_name:
+  type: str
+  default: NINA
+  help: "Name of the author"
+
+email:
+  type: str
+  default: |-
+    {{ author_name.lower() | trim() | replace(' ', '.') }}@nina.no
+  help: "Email of the author"
+
+debug:
+  type: bool
+  default: false
+  help: "Debug the template"
+
+_envops:
+  keep_trailing_newline: true
+  trim_blocks: true
+  lstrip_blocks: true

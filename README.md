@@ -1,36 +1,89 @@
-# nina-template-r
+# NINA R template
+🚀 Skip the boring setup and jump straight into coding! This template gives you everything you need for a modern R project - from code formatting to CI/CD - all configured and ready to go.
 
-Modify this `README.md` file, to explain what your software does.
+## Requirements
+- [uv](https://github.com/astral-sh/uv) - An extremely fast Python package installer and resolver
+- [git](https://git-scm.com/) - Version control system
+- [pixi](https://prefix.dev/pixi) - Package manager
 
-# Additional resources
+uv is needed just copy the template
 
-In addition to this template, here is a list of useful resources you could start from:
-- https://github.com/NINAnor/NinaR
+## How to use it
 
-# Good practices
+### Creating a new project
+Make sure that `uv` is installed, then run (replace `your-project-name` with your desired project name):
 
-## .gitignore
+```bash
+uvx --with copier_template_extensions copier copy --trust gh:ninanor/nina-r-template your-project-name
+```
 
-Add paths and files that you do not want to be committed by adding them to .gitignore.
+Answer the questions and you are done.
 
-## pre-commit
+### Applying to an existing project
+To apply this template to an existing project directory:
 
-`pre-commit` can run tools to check your changes and refactor code (using `styler`), to keep your repository clean and avoid common mistakes. The list of actions that are executed are defined in `.pre-commit-config.yaml`.
+```bash
+cd your-existing-project
+uvx --with copier_template_extensions copier copy --trust gh:ninanor/nina-r-template .
+```
 
-### Installation
+This will add the template files to your current directory. Be careful as this may overwrite existing files.
 
-1. Install Python if not available. It can be downloaded from [python.org/downloads](https://www.python.org/downloads/). Be sure to add Python to your PATH.
-2. Install `pipx`, as it is the suggested way to install Python tools:
-   - Windows users: `py -3 -m pip install pipx`
-   - Linux users: `python3 -m pip install pipx`
-3. Install `pre-commit`: `pipx install pre-commit`
-4. Configure PATH: `pipx ensurepath`
-5. Close and open your shell again
-6. Enter into your git repository and install the hooks: `pre-commit install` (optional, but recommended)
 
-### How to use it
+## Features
+Why should I use this template:
 
-In case you executed `pre-commit install`, `pre-commit` hooks will be executed each time you will try to commit (`git commit`). If any of the checks fail or if any files that is going to be committed is changed (because a tool refactored or cleaned it), the commit will fail.
+- **Auto formatting and code checking** using `air`
+- **Updatable template** - Easy to keep up to date with latest practices
+- **Visual Studio Code** configurations included
+- **Pre-commit hooks** for code quality enforcement
+- **GitHub Actions** workflows for CI/CD
 
-The suggested method to use `pre-commit` is to run it before trying to commit your changes, using `pre-commit run -a`. You can run this command multiple times, to check if the changes are ready to be committed.
-After all the tests succeeded, the changes can be staged (`git add`) and committed.
+## How to update
+You just need to run:
+```
+uvx --with copier_template_extensions copier update --trust --defaults
+```
+
+In case you want to change your answers you can drop the `--defaults` flag:
+```
+uvx --with copier_template_extensions copier update --trust
+```
+
+In both cases, copier will try to check differences between your project and the template. It might be necessary to fix some conflicts: in this case it is up to the user to decide whenever to include or reject the improvements of the template into the repository.
+
+Check this [page](https://copier.readthedocs.io/en/stable/updating/) for more specific info about this feature.
+
+## Struggling with a template?
+Please report any issues you have using the template, even if some documentation is unclear or is missing!
+
+
+# Development
+
+**NOTE**: Development of the template is supported only on Linux, the scripts used for development/maintenance of the template are Linux-only, while the resulting template can also be used in Windows.
+
+Install development dependencies:
+- **pinact**: `./scripts/install-pinact.sh`
+
+## Testing the template
+To test the template using copier-template-tester, run:
+```bash
+pre-commit run -c .pre-commit-config-extra.yaml
+```
+
+## Maintenance
+To update dependencies and tools:
+```bash
+./scripts/maintenance.sh
+```
+
+## How to version
+To create a new release:
+```bash
+./scripts/release.sh <patch|minor|major>
+```
+
+Example:
+```bash
+./scripts/release.sh minor
+```

@@ -1,0 +1,19 @@
+[defaults]
+author_name = "Test Author"
+debug = true
+default_branch_name = "main"
+email = "test@example.com"
+project_name = "Test R Project"
+project_slug = "test_r_project"
+repo_name = "test-repo"
+repo_org = "testorg"
+
+[output."/tmp/ctt/r-template/custom"]
+author_name = "Test Author"
+debug = true
+default_branch_name = "main"
+email = "test@example.com"
+project_name = "Test R Project"
+project_slug = "test_r_project"
+repo_name = "test-repo"
+repo_org = "testorg"
