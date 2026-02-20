@@ -1,0 +1,23 @@
+[workspace]
+authors = ["{{ author_name }} <{{ email }}>"]
+channels = ["conda-forge"]
+name = "{{ project_slug }}"
+platforms = ["linux-64", 'win-64']
+version = "0.1.0"
+
+[tasks]
+Rscript = "Rscript"
+radian = "radian"
+
+[dependencies]
+r-base = ">=4.5.2,<4.6"
+r-languageserver = ">=0.3.16,<0.4"
+radian = ">=0.6.15,<0.7"
+r-httpgd = ">=2.0.4,<3"
+prek = ">=0.3.2,<0.4"
+
+[activation.env]
+R_HOME = "$CONDA_PREFIX/lib/R"
+PIXI_R_LIBS = "$CONDA_PREFIX/lib/R/library"
+R_LIBS = "$PIXI_R_LIBS"
+R_LIBS_USER = "$PIXI_R_LIBS"

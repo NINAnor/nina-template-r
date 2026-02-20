@@ -1,0 +1,17 @@
+{
+    "[r]": {
+        "editor.formatOnSave": true
+    },
+    "r.alwaysUseActiveTerminal": true,
+    "r.plot.useHttpgd": true,
+    "r.rpath.linux": "${workspaceFolder}/.pixi/envs/default/bin/R",
+    "r.rterm.linux": "${workspaceFolder}/.pixi/envs/default/bin/radian",
+    "r.rterm.windows": "${workspaceFolder}\\.pixi\\envs\\default\\Scripts\\radian.exe",
+    "r.rpath.windows": "${workspaceFolder}\\.pixi\\envs\\default\\Scripts\\R.exe",
+    "terminal.integrated.env.linux": {
+        "R_HOME": "${workspaceFolder}/.pixi/envs/default/lib/R",
+    },
+    "terminal.integrated.env.windows": {
+        "R_HOME": "${workspaceFolder}\\.pixi\\envs\\default\\lib\\R",
+    }
+}
