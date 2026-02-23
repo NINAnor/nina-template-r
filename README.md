@@ -14,7 +14,7 @@ uv is needed just copy the template
 Make sure that `uv` is installed, then run (replace `your-project-name` with your desired project name):
 
 ```bash
-uvx --with copier_template_extensions copier copy --trust gh:ninanor/nina-r-template your-project-name
+uvx --with copier_template_extensions copier copy --trust gh:ninanor/nina-template-r your-project-name
 ```
 
 Answer the questions and you are done.
@@ -24,7 +24,7 @@ To apply this template to an existing project directory:
 
 ```bash
 cd your-existing-project
-uvx --with copier_template_extensions copier copy --trust gh:ninanor/nina-r-template .
+uvx --with copier_template_extensions copier copy --trust gh:ninanor/nina-template-r .
 ```
 
 This will add the template files to your current directory. Be careful as this may overwrite existing files.
