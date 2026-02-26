@@ -33,10 +33,23 @@ A modern, well-structured R project with tools for code quality, reproducibility
 
 ### Setup
 
-1. **Clone the repository**
+1. **Clone the repository (or initialize it)**
+
+   - If you are starting from an existing repository:
+     ```bash
+     git clone <repository-url>
+     cd {{ project_slug }}
+     ```
+
+   - If you just created the folder using copier:
+     ```bash
+     cd {{ project_slug }}
+     git init
+     ```
+
+2. ** Install the dependencies**
+
    ```bash
-   git clone <repository-url>
-   cd {{ project_slug }}
    pixi install
    ```
 
